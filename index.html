@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Curiosity Explorer</title>
+
+    <meta name="description"
+        content="Discover amazing facts, unexplored questions, learning paths and related knowledge using AI Curiosity Explorer.">
+
+    <meta name="keywords"
+        content="AI, Curiosity, Learning, Knowledge Explorer, AI Website, Education">
+
+    <meta name="author" content="Anand">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="bg-gradient"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <span>AI Curiosity Explorer</span>
+
+        </div>
+
+        <button class="theme-btn" id="themeBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="hero-badge">
+            ✨ Explore • Discover • Learn
+        </div>
+
+        <h1>
+            Turn Any Topic Into
+            <span>Infinite Curiosity.</span>
+        </h1>
+
+        <p>
+            Type anything you want to learn.
+            AI instantly generates amazing facts,
+            unanswered questions,
+            related fields,
+            future technologies,
+            and a personalized learning roadmap.
+        </p>
+
+    </section>
+
+    <!-- Search -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="topicInput"
+                placeholder="Example: Space, Artificial Intelligence, Human Brain, Oceans...">
+
+            <button id="exploreBtn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Explore
+            </button>
+
+        </div>
+
+        <div class="quick-topics">
+
+            <button class="topic-chip">Space</button>
+            <button class="topic-chip">Artificial Intelligence</button>
+            <button class="topic-chip">Black Holes</button>
+            <button class="topic-chip">Dinosaurs</button>
+            <button class="topic-chip">Quantum Computing</button>
+            <button class="topic-chip">Psychology</button>
+            <button class="topic-chip">Ocean</button>
+            <button class="topic-chip">Time Travel</button>
+
+        </div>
+
+    </section>
+
+    <!-- Loading -->
+
+    <section id="loadingSection" class="loading-section hidden">
+
+        <div class="loader"></div>
+
+        <h3>Generating Curiosity...</h3>
+
+        <p>Exploring knowledge universe...</p>
+
+    </section>
+
+    <!-- Results -->
+
+    <section id="results" class="results hidden">
+
+        <!-- Topic Card -->
+
+        <div class="topic-header">
+
+            <h2 id="topicTitle">
+                Topic
+            </h2>
+
+            <p id="topicSubtitle">
+                Explore knowledge from multiple perspectives.
+            </p>
+
+        </div>
+
+        <!-- Grid -->
+
+        <div class="cards-grid">
+
+            <!-- Facts -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Amazing Facts
+                </div>
+
+                <ul id="factsList"></ul>
+
+            </div>
+
+            <!-- Questions -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Open Questions
+                </div>
+
+                <ul id="questionsList"></ul>
+
+            </div>
+
+            <!-- Related -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    Related Fields
+                </div>
+
+                <ul id="relatedList"></ul>
+
+            </div>
+
+            <!-- Learn -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Learn Next
+                </div>
+
+                <ul id="learnList"></ul>
+
+            </div>
+
+            <!-- Future -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <i class="fa-solid fa-rocket"></i>
+                    Future Possibilities
+                </div>
+
+                <ul id="futureList"></ul>
+
+            </div>
+
+            <!-- AI Summary -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <i class="fa-solid fa-brain"></i>
+                    AI Summary
+                </div>
+
+                <p id="summaryText"></p>
+
+            </div>
+
+        </div>
+
+        <!-- Action Buttons -->
+
+        <div class="action-buttons">
+
+            <button id="copyBtn">
+                <i class="fa-solid fa-copy"></i>
+                Copy Results
+            </button>
+
+            <button id="downloadBtn">
+                <i class="fa-solid fa-download"></i>
+                Download
+            </button>
+
+            <button id="shareBtn">
+                <i class="fa-solid fa-share-nodes"></i>
+                Share
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Toast -->
+
+    <div id="toast" class="toast">
+        Copied Successfully!
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>AI Curiosity Explorer</h3>
+
+        <p>
+            Expand your curiosity.
+            Discover the unknown.
+            Learn something amazing every day.
+        </p>
+
+        <div class="footer-line"></div>
+
+        <small>
+            Built for the
+            <strong>30 Days • 30 AI Websites Challenge</strong>
+        </small>
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
